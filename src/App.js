@@ -1,4 +1,3 @@
-import './App.css';
 import { Provider } from 'react-redux'
 import UserContainer from './components/UserContainer'
 import store from './store'

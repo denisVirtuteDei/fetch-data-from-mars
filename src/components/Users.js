@@ -9,17 +9,15 @@ export const Users = (props) => {
     }
 
     return (
-        <div className='column'>
-            <div className='row' style={{ margin: '5px' }}>
-                <button onClick={handleClick}>Fetch data from Mars</button>
-            </div>
-            <div className='row'>
+        <div>
+            <button onClick={handleClick}>Fetch data from Mars</button>
+            <div >
                 {
                     props.loading
                         ? <Preloader />
-                        : props.userList.map(el => {
-                            return <User key={el.id} name={el.name} username={el.username} />
-                        })
+                        : props.userList.map(el => (
+                            <User key={el.id} name={el.name} username={el.username} />
+                        ))
                 }
             </div>
         </div>
