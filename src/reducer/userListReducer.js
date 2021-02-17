@@ -1,4 +1,4 @@
-import { FETCH_ALL_USERS, DELETE_USER } from '../constants/types';
+import { FETCH_USERS, DELETE_USER } from '../constants/types';
 
 const initUserList = {
     userList: []
@@ -6,7 +6,7 @@ const initUserList = {
 
 export default function (state = initUserList, action) {
     switch (action.type) {
-        case FETCH_ALL_USERS:
+        case FETCH_USERS:
             return {
                 ...state,
                 userList: action.payload
