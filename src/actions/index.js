@@ -1,2 +1,3 @@
-export * from './preloader'
-export * from './userList'
+export * from './preloader';
+export * from './usersList';
+export * from './theme';

@@ -1,6 +1,9 @@
 import React from 'react';
-import { Loading } from '../styles'
+import style from 'styled-components';
 
-export default () => (
-    <Loading> Loading... </Loading>
-)
+const Loading = style.div`
+    margin: 10px;
+    padding: 5px;
+`
+
+export default () => (<Loading> Loading... </Loading>)

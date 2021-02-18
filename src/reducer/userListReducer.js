@@ -1,7 +1,9 @@
-import { FETCH_ALL_USERS, DELETE_USER, DELETE_USER_LIST } from '../actions';
+import { FETCH_ALL_USERS, DELETE_USER, DELETE_USERS_LIST, FETCH_ALL_USERS_ERROR } from '../actions';
 
 const initUserList = {
-    userList: []
+    userList: [],
+    error: {},
+    isError: false,
 }
 
 export default function (state = initUserList, action) {
@@ -16,10 +18,16 @@ export default function (state = initUserList, action) {
                 ...state,
                 userList: state.userList.filter(x => x.id !== action.payload)
             }
-        case DELETE_USER_LIST:
+        case DELETE_USERS_LIST:
             return {
                 ...state,
                 userList: []
+            }
+        case FETCH_ALL_USERS_ERROR:
+            return {
+                ...state,
+                isError: true,
+                error: action.payload
             }
         default: return state;
     }

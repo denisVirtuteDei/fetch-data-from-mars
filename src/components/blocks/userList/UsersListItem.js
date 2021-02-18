@@ -8,9 +8,7 @@ export const UserListItem = ({ name, username, ...props }) => (
             <div> username: {username} </div>
         </div>
         <div className='cross-mark'>
-            <button onClick={() => props.onClick(props.id)}>
-                &#10060;
-            </button>
+            <button onClick={() => props.onClick(props.id)}> &#10060; </button>
         </div>
     </Card>
 )
