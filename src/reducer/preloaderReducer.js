@@ -1,4 +1,4 @@
-import { SHOW_PRELOADER, HIDE_PRELOADER } from '../constants/types';
+import { SHOW_PRELOADER, HIDE_PRELOADER } from '../actions';
 
 const initState = {
     loading: false

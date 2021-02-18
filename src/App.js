@@ -1,11 +1,11 @@
 import { Provider } from 'react-redux'
-import UserContainer from './components/UserContainer'
-import store from './store'
+import { UserList } from './components/blocks/Users/UserList';
+import store from './redux/store'
 
 function App() {
   return (
     <Provider store={store}>
-      <UserContainer />
+      <UserList />
     </Provider>
   );
 }
