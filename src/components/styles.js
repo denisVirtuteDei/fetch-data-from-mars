@@ -7,16 +7,21 @@ export const Card = style.div`
     border: 1px solid #333; 
     box-sizing: content-box;
     box-shadow: 3px 3px 7px #444;
+    
+    .cross-mark {
+        text-align: right;
+    }
 `
 export const Loading = style.div`
     margin: 10px;
     padding: 5px;
 `
 export const CustomTh = style.th`
-    padding: 11px;
-    vertical-align: baseline;
+    padding: 10px;
+    vertical-align: top;
+    text-align: left;
 
-    .button {
-        padding: 3px;
+    .part {
+        margin: 5px;
     }
 `

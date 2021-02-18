@@ -1,8 +1,8 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchAllUsersRequest } from '../../../actions';
+import { fetchAllUsersRequest, deleteUser, deleteUserList } from '../../../actions';
 import Preloader from '../../Preloader/Preloader';
-import { CustomTh } from '../../styles';
+import { SideBar } from './SideBar';
 import { UserListItem } from './UserListItem';
 
 export const UserList = (props) => {
@@ -15,19 +15,34 @@ export const UserList = (props) => {
         dispatch(fetchAllUsersRequest());
     }
 
+    const handleDeleteUserClick = id => {
+        dispatch(deleteUser(id))
+    }
+
+    const handleDeleteUserListClick = () => {
+        dispatch(deleteUserList());
+    }
+
     return (
         <table>
             <tbody>
                 <tr>
-                    <CustomTh>
-                        <button className='button' onClick={handleClick}>Fetch data from Mars</button>
-                    </CustomTh>
+                    <SideBar
+                        fetchUsers={handleClick}
+                        deleteUserList={handleDeleteUserListClick}
+                    />
                     <td>
                         {
                             loading
                                 ? <Preloader />
                                 : userList.map(el => (
-                                    <UserListItem key={el.id} name={el.name} username={el.username} />
+                                    <UserListItem
+                                        key={el.id}
+                                        id={el.id}
+                                        name={el.name}
+                                        username={el.username}
+                                        onClick={handleDeleteUserClick}
+                                    />
                                 ))
                         }
                     </td>
